@@ -45,3 +45,26 @@ class QuoteMachine extends React.Component {
         );
     }
 }
+
+/*ReactRedux*/
+
+const mapStateToProps = (state)=>({quote:state.quote,author:state.author});
+
+const mapDispatchToProps = (dispatch) => ({generateRandomQuote:(currentQuote)=>{dispatch(changeQuote(currentQuote))}});
+
+const Container = ReactRedux.connect(mapStateToProps,mapDispatchToProps)(QuoteMachine);
+
+const Provider = ReactRedux.Provider;
+
+class RandomQuoteMachine extends React.Component {
+    constructor(props){
+        super(props);
+    }
+
+    render(){
+        return(
+        <Provider store={store}>
+            <Container/>
+        </Provider>)
+    }
+}
