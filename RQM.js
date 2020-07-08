@@ -92,8 +92,8 @@ ReactDOM.render(<RandomQuoteMachine/>,document.getElementById("RQM"))
 /*jQuery*/
 
 $("document").ready(function(){
-    $("#twittericon").addClass("fab fa-twitter-square");
-    $("#tumblricon").addClass("fab fa-tumblr-square");
+    $("#twittericon").addClass("fab fa-twitter");
+    $("#tumblricon").addClass("fab fa-tumblr");
 
 
 
