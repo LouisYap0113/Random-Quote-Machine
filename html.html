@@ -6,21 +6,111 @@
 
     <body>
         <style>
+            :root {
+                font-size: 25px;
+                  }
+
             * {
                 margin:0;
                 padding:0;
               }
 
-            main {
-                    background: url("");
+            body {
+                    min-height: 100vh;
+                    background: url("https://github.com/LouisYap0113/Random-Quote-Machine/blob/master/background.jpg?raw=true") no-repeat fixed;
+                    background-size: 100% 100%;
                  }
+
+            main {
+                    display: flex;
+                    justify-content: center;
+                 }
+
+            #quote-box {
+                            margin-top: 65px;
+                            width: 540px;
+                            height: 300px;
+                            border: 5px solid;
+                            border-radius: 20px;
+                            background:;
+                       }
+
+            #quote-area {
+                            height:239px;
+                            margin: 10px 10px 0;
+                            padding-bottom: 5px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                        }
+
+            #text {
+                    font: italic bold 25px "Gill Sans MT";
+                  }
+
+            #openquote {
+                        font-size:20px;
+                        margin-right: 10px;
+                        position: relative;
+                        top: -7px
+                       }
+
+            #author {
+                        text-align: right;
+                        font-family: Jokerman;
+                        margin-bottom: 25px;
+                    }
+
+            #button-area {
+                            width: 541px;
+                            border-radius:0 0 16px 16px;
+                            display: flex;
+                            justify-content: space-between;
+                            position: relative;
+                            right: 1px;
+                            background:;
+                         }
+
+            #share-area {
+                            margin: 5px 0 5px 10px;
+                        }
+
+            #twittericon, #tumblricon {
+                                        width:28px;
+                                        font-size: 28px;
+                                        background:;
+                                        color:white;
+                                        border-radius: 5px;
+                                        padding:4px 7px 4px;
+                                      }
+
+            #tumblricon {
+                            text-align:center;
+                            margin-left: 10px;
+                        }
+
+            #newquote-area {
+                                margin: 7px 10px 5px 0;
+                           }
+
+            #new-quote {
+                            font: 25px "Snap ITC";
+                            color: white;
+                            background:;
+                            padding: 0 10px 0;
+                            border: none;
+                            border-radius: 5px;
+                       }
+
+            #twittericon:hover, #tumblricon:hover, #new-quote:hover {
+                                                                        opacity: 0.8;
+                                                                        cursor: pointer;
+                                                                    }
+
         </style>
 
         <main id="RQM">
         </main>
-
-
-
 
     </body>
 

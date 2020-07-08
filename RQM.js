@@ -28,6 +28,12 @@ const store = Redux.createStore(quoteReducer);
 class QuoteMachine extends React.Component {
     constructor(props){
         super(props);
+        this.state={color:[
+            {color1:"hsl(120deg,80%,40%)",color2:"hsl(120deg,100%,50%)",color3:"hsl(120deg,100%,80%)",color4:"hsl(270deg,80%,40%)",color5:"hsl(270deg,100%,50%)"},
+            {color1:"hsl(150deg,80%,40%)",color2:"hsl(150deg,100%,50%)",color3:"hsl(150deg,100%,80%)",color4:"hsl(300deg,80%,40%)",color5:"hsl(300deg,100%,50%)"},
+            {color1:"hsl(180deg,80%,40%)",color2:"hsl(180deg,100%,50%)",color3:"hsl(180deg,100%,80%)",color4:"hsl(330deg,80%,40%)",color5:"hsl(330deg,100%,50%)"},
+            {color1:"hsl(210deg,80%,40%)",color2:"hsl(210deg,100%,50%)",color3:"hsl(210deg,100%,80%)",color4:"hsl(60deg,80%,40%)",color5:"hsl(60deg,100%,50%)"},
+        ]};
         this.generateNewQuote=this.generateNewQuote.bind(this);
     }
 
@@ -44,19 +50,27 @@ class QuoteMachine extends React.Component {
     })};
 
     render(){
+        const colorList = this.state.color[Math.floor(Math.random()*this.state.color.length)];
+
+        const color1 = colorList.color1;
+        const color2 = colorList.color2;
+        const color3 = colorList.color3;
+        const color4 = colorList.color4;
+        const color5 = colorList.color5;
+
         return (
-            <div id="quote-box">
+            <div id="quote-box" style={{borderColor:color1,backgroundColor:color3}}>
                 <article id="quote-area">
-                    <section id="text">{this.props.quote}</section>
-                    <section id="author">{this.props.author}</section>
+                    <section id="text" style={{color:color5}}><i id="openquote"></i>{this.props.quote}</section>
+                    <section id="author" style={{color:color5}}>-{this.props.author}-</section>
                 </article>
-                <div id="button-area">
+                <div id="button-area" style={{backgroundColor:color2}}>
                     <section id="share-area">
-                        <a title="Tweet this quote!" id="tweet-quote" href={"https://twitter.com/intent/tweet?hashtags=quotes&text=" + encodeURIComponent('"' + this.props.quote + '"  -' + this.props.author)} target="_blank"><i id="twittericon"></i></a>
-                        <a title="Post on your tumblr!" id="tumblr-quote" href={"https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption=" + encodeURIComponent(this.props.author) + '&content=' + encodeURIComponent(this.props.quote) + '&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button'} target="_blank"><i id="tumblricon"></i></a>
+                        <a title="Tweet this quote!" id="tweet-quote" href={"https://twitter.com/intent/tweet?hashtags=quotes&text=" + encodeURIComponent('"' + this.props.quote + '"  -' + this.props.author)} target="_blank"><i id="twittericon" style={{backgroundColor:color4}}></i></a>
+                        <a title="Post on your tumblr!" id="tumblr-quote" href={"https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption=" + encodeURIComponent(this.props.author) + '&content=' + encodeURIComponent(this.props.quote) + '&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button'} target="_blank"><i id="tumblricon" style={{backgroundColor:color4}}></i></a>
                     </section>
                     <section id="newquote-area">
-                        <button id="new-quote" onClick={this.generateNewQuote}>New Quote</button>
+                        <button id="new-quote" title="Generate new quote!" style={{backgroundColor:color4}} onClick={this.generateNewQuote}>New</button>
                     </section>
                 </div>
             </div>
@@ -92,9 +106,9 @@ ReactDOM.render(<RandomQuoteMachine/>,document.getElementById("RQM"))
 /*jQuery*/
 
 $("document").ready(function(){
-    $("#twittericon").addClass("fab fa-twitter-square");
-    $("#tumblricon").addClass("fab fa-tumblr-square");
-
+    $("#twittericon").addClass("fab fa-twitter");
+    $("#tumblricon").addClass("fab fa-tumblr");
+    $("#openquote").addClass("fas fa-quote-left");
 
 
 
