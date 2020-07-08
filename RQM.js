@@ -46,16 +46,16 @@ class QuoteMachine extends React.Component {
     render(){
         return (
             <div id="quote-box">
-                <article>
+                <article id="quote-area">
                     <section id="text">{this.props.quote}</section>
                     <section id="author">{this.props.author}</section>
                 </article>
-                <div>
-                    <section>
-                        <a title="Tweet this quote!" id="tweet-quote" href={"https://twitter.com/intent/tweet?hashtags=quotes&text=" + encodeURIComponent('"' + this.props.quote + '"  -' + this.props.author)} target="_blank">tweet</a>
-                        <a title="Post on your tumblr!" id="tumblr-quote" href={"https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption=" + encodeURIComponent(this.props.author) + '&content=' + encodeURIComponent(this.props.quote) + '&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button'} target="_blank">tumblr</a>
+                <div id="button-area">
+                    <section id="share-area">
+                        <a title="Tweet this quote!" id="tweet-quote" href={"https://twitter.com/intent/tweet?hashtags=quotes&text=" + encodeURIComponent('"' + this.props.quote + '"  -' + this.props.author)} target="_blank"><i id="twittericon"></i></a>
+                        <a title="Post on your tumblr!" id="tumblr-quote" href={"https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption=" + encodeURIComponent(this.props.author) + '&content=' + encodeURIComponent(this.props.quote) + '&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button'} target="_blank"><i id="tumblricon"></i></a>
                     </section>
-                    <section>
+                    <section id="newquote-area">
                         <button id="new-quote" onClick={this.generateNewQuote}>New Quote</button>
                     </section>
                 </div>
@@ -88,3 +88,14 @@ class RandomQuoteMachine extends React.Component {
 }
 
 ReactDOM.render(<RandomQuoteMachine/>,document.getElementById("RQM"))
+
+/*jQuery*/
+
+$("document").ready(function(){
+    $("#twittericon").addClass("fab fa-twitter-square");
+    $("#tumblricon").addClass("fab fa-tumblr-square");
+
+
+
+
+})
