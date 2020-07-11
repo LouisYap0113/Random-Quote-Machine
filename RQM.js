@@ -105,7 +105,7 @@ ReactDOM.render(<RandomQuoteMachine/>,document.getElementById("RQM"))
 
 /*jQuery*/
 
-$("document").ready(function(){
+$(document).ready(function(){
     $("#twittericon").addClass("fab fa-twitter");
     $("#tumblricon").addClass("fab fa-tumblr");
     $("#openquote").addClass("fas fa-quote-left");
